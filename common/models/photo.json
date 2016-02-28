@@ -1,0 +1,86 @@
+{
+  "name": "Photo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "imageNumber": {
+      "type": "string",
+      "required": true
+    },
+    "fondsTitle": {
+      "type": "string"
+    },
+    "imageTitle": {
+      "type": "string"
+    },
+    "creationYear": {
+      "type": "number"
+    },
+    "dateOfCreationRaw": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text",
+      "postgresql": {
+          "dataType": "text"
+        }
+    },
+    "creator": {
+      "type": "string"
+    },
+    "subjects": {
+      "type": "string"
+    },
+    "names": {
+      "type": "string"
+    },
+    "imagePath": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "geopoint"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "deleteById"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "updateAttributes"
+    }
+  ],
+  "methods": {}
+}
