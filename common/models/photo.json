@@ -23,7 +23,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text",
+      "type": "string",
       "postgresql": {
           "dataType": "text"
         }
