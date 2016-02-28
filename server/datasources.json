@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "postgresdevds": {
+    "host": "localhost",
+    "port": "5432",
+    "database": "yeg_tagger",
+    "username": "***REMOVED***",
+    "password": "***REMOVED***",
+    "name": "postgresdevds",
+    "connector": "postgresql",
+    "debug": true
+  }
+}
