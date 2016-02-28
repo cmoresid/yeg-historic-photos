@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>YEG Photo Archive</title>
-    </head>
-    <body>
-        <a href="views/admin.html#/Photos/list">Go to admin</a>
-    </body>
+<html ng-app="yegPhotoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>YEG Photo Archive</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a ui-sref="map" class="navbar-brand">YEG Photos</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a ui-sref="map">Map</a>
+            </li>
+            <li>
+              <a ui-sref="about">About</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="views/admin.html#/Photos/list" target="_blank">Admin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <main ui-view class="container spacing"></main>
+
+    <script src="../vendor/bower_components/jquery/dist/jquery.js"></script>
+    <script src="../vendor/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../vendor/bower_components/angular/angular.js"></script>
+    <script src="../vendor/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../vendor/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/services/lb-services.js"></script>
+    <script src="../js/controllers/map.js"></script>
+  </body>
 </html>
