@@ -1,6 +1,16 @@
 {
-  "postgresdevds": {
-    "name": "postgresdevds",
+  "db": {
+    "name": "db",
     "connector": "memory"
+  },
+  "postgresdevds": {
+    "host": "***REMOVED***",
+    "port": "5432",
+    "database": "***REMOVED***",
+    "username": "***REMOVED***",
+    "password": "E7BzGiBKQLV7xDh",
+    "name": "postgresdevds",
+    "connector": "***REMOVED***-rv0W2V",
+    "debug": true
   }
 }
