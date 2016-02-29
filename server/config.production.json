@@ -20,9 +20,9 @@
     },
     "cors": false,
     "errorHandler": {
-      "disableStackTrace": false
+      "disableStackTrace": true
     }
   },
   "legacyExplorer": false,
-  "automigrate": false
+  "automigrate": true
 }
