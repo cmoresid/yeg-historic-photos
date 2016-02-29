@@ -5,9 +5,11 @@
   "scripts": {
     "start": "node .",
     "pretest": "jshint .",
-    "posttest": "nsp check"
+    "posttest": "nsp check",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
+    "bower": "^1.7.7",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "fast-csv": "^1.0.0",
@@ -33,4 +35,3 @@
   },
   "description": "yeg_photo_tagger"
 }
-
