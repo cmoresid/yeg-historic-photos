@@ -50,7 +50,7 @@ module.exports = function(app) {
    app.datasources.postgresdevds.automigrate('Photo', function(err) {
        if (err) throw err;
 
-       var csv_path = '/Users/cmoreside/Projects/yeg_archive_scrape/data/yeg_city_archive.csv';
+       var csv_path = 'yeg_city_archive.csv';
 
        csv.fromPath(csv_path, { headers: true }).on('data', function(data) {
            app.models.Photo.create({
