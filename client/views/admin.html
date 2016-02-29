@@ -22,7 +22,7 @@
     <script type="text/javascript">
       function logout() {
         $.ajax({
-            url: 'http://localhost:3000/api/Users/logout?access_token=' +
+            url: 'https://yegtaggerapp.herokuapp.com/api/Users/logout?access_token=' +
               window.localStorage.getItem('api_token'),
             type: 'POST'
         }).done(function (data, textStatus) {
