@@ -40,9 +40,11 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('main-bower-files');
   grunt.loadNpmTasks('grunt-bower-concat');
 
   // Default task(s).
   grunt.registerTask('default', ['bower_concat', 'bower']);
+  grunt.registerTask('uglify', ['uglify']);
 };
