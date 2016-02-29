@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "postgresdevds": {
-    "host": "localhost",
+    "host": "***REMOVED***",
     "port": "5432",
-    "database": "yeg_tagger",
-    "username": "yegtaggerappuser",
+    "database": "***REMOVED***",
+    "username": "***REMOVED***",
     "password": "E7BzGiBKQLV7xDh",
     "name": "postgresdevds",
-    "connector": "postgresql",
+    "connector": "***REMOVED***-rv0W2V",
     "debug": true
   }
 }
