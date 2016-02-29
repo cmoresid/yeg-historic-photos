@@ -8,9 +8,8 @@
     "port": "5432",
     "database": "***REMOVED***",
     "username": "***REMOVED***",
-    "password": "E7BzGiBKQLV7xDh",
+    "password": "***REMOVED***-rv0W2V",
     "name": "postgresdevds",
-    "connector": "***REMOVED***-rv0W2V",
-    "debug": true
+    "connector": "postgresql"
   }
 }
