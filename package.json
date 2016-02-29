@@ -21,8 +21,8 @@
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
-    "loopback-connector-postgresql": "^2.4.1",
     "loopback-datasource-juggler": "^2.39.0",
+    "loopback-connector-postgresql": "^2.4.1",
     "main-bower-files": "^2.11.1",
     "serve-favicon": "^2.0.1"
   },
