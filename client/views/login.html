@@ -38,7 +38,7 @@
           e.prevenDefault();
         }
 
-        $.ajax({url: 'http://localhost:3000/api/Users/login', type: 'POST', dataType: 'json', data: $('#login-form').serialize()}).done(function (data, textStatus) {
+        $.ajax({url: 'https://yegtaggerapp.herokuapp.com/api/Users/login', type: 'POST', dataType: 'json', data: $('#login-form').serialize()}).done(function (data, textStatus) {
           console.log('textStatus: ', textStatus);
           window.localStorage.setItem('api_token', data.id);
           window.localStorage.setItem('username', $('#email').val())
