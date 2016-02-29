@@ -5,7 +5,7 @@
   },
   "models": {
     "ManagerHost": {
-      "6ce2a20a-cab7-4b20-9d92-980ec916c96d": "{\"id\":\"6ce2a20a-cab7-4b20-9d92-980ec916c96d\",\"host\":\"cmadmin:ePxvEoNJhxsNiYaEJLWfNG3ATRCej3@159.203.26.181\",\"port\":8701,\"actions\":[\"delete\",\"edit\"],\"protocol\":\"http\",\"created\":1456718969591,\"error\":{\"message\":\"Unknown \\\"ServiceInstance\\\" id \\\"undefined\\\".\",\"status\":404},\"errorType\":\"invalid\",\"app\":null,\"processes\":null,\"$$hashKey\":\"object:58\",\"isHostProblem\":true}"
+      "6ce2a20a-cab7-4b20-9d92-980ec916c96d": "{\"id\":\"6ce2a20a-cab7-4b20-9d92-980ec916c96d\",\"host\":\"cmadmin:ePxvEoNJhxsNiYaEJLWfNG3ATRCej3@159.203.26.181\",\"port\":8701,\"actions\":[\"delete\",\"edit\",\"env-set\",\"env-get\"],\"protocol\":\"http\",\"created\":1456718969591,\"error\":null,\"errorType\":null,\"app\":null,\"processes\":{\"pids\":[]},\"$$hashKey\":\"object:58\",\"isHostProblem\":true,\"_processCountTimeout\":null}"
     },
     "LoadBalancer": {}
   }

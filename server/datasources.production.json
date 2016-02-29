@@ -7,8 +7,8 @@
     "host": "localhost",
     "port": "5432",
     "database": "yeg_tagger",
-    "username": "yegdbuser",
-    "password": "JfkRgQzFc9qup9",
+    "username": "yegtaggerappuser",
+    "password": "E7BzGiBKQLV7xDh",
     "name": "postgresdevds",
     "connector": "postgresql",
     "debug": true
