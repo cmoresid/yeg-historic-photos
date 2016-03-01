@@ -3,10 +3,10 @@
     <ui-gmap-markers models="markers" coords="'self'" icon="'icon'" click="onClick">
       <ui-gmap-windows show="show">
         <div ng-non-bindable>
-          <div><b>{{imageTitle}}<b></div>
-          <div>Year of Photo: {{creationYear}}</div>
-          <div><img src="{{ imagePath }}" /></div>
-          <div>Description: {{description}}</div>
+          <h3 style="text-align: center">{{imageTitle}}</h3>
+          <div style="text-align: center; margin-bottom: 15px">Year of Photo: {{creationYear}}</div>
+          <div style="margin: auto;"><img src="{{imagePath}}" /></div>
+          <div style="max-width: 400px; margin-top: 15px; font-style: italic;">{{description}}</div>
         </div>
       </ui-gmap-windows>
     </ui-gmap-google-map>
