@@ -15,8 +15,7 @@ yegPhotoApp.controller('MapController', ['$scope', 'Photo', 'uiGmapGoogleMapApi'
     };
 
     $scope.onClick = function(marker, eventName, model) {
-           console.log("Clicked!");
-           model.show = !model.show;
+      model.show = !model.show;
     };
 
     GoogleMapApi.then(function(maps) {
@@ -24,7 +23,13 @@ yegPhotoApp.controller('MapController', ['$scope', 'Photo', 'uiGmapGoogleMapApi'
       maps.visualRefresh = true;
 
       $scope.photos = Photo.find({
-          filter: { where: { creationYear: { neq: null } } }
+          filter: {
+            where: {
+              creationYear: {
+                neq: null
+              }
+            }
+          }
         })
         .$promise
         .then(function(photos) {
