@@ -1,4 +1,5 @@
 var csv = require('fast-csv');
+var path = require('path');
 
 module.exports = function(app) {
   /*
@@ -50,7 +51,7 @@ module.exports = function(app) {
    app.datasources.postgresdevds.automigrate('Photo', function(err) {
        if (err) throw err;
 
-       var csv_path = 'yeg_city_archive.csv';
+       var csv_path = path.resolve(__dirname, '../../data', 'yeg_city_archive.csv');
 
        csv.fromPath(csv_path, { headers: true }).on('data', function(data) {
            app.models.Photo.create({

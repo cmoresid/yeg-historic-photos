@@ -1,15 +1,3 @@
 {
-  "db": {
-    "name": "db",
-    "connector": "memory"
-  },
-  "postgresdevds": {
-    "host": "ec2-54-83-3-38.compute-1.amazonaws.com",
-    "port": "5432",
-    "database": "d6ojo5sot0d30t",
-    "username": "xfigpqsehuozzr",
-    "password": "oz7r2DJ466dvVekx9Aw-rv0W2V",
-    "name": "postgresdevds",
-    "connector": "postgresql"
-  }
+  
 }
