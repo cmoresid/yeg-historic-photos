@@ -17,14 +17,16 @@
     "grunt-bower-concat": "^1.0.0",
     "grunt-bower-task": "^0.4.0",
     "grunt-cli": "0.1.13",
+    "grunt-exec": "^0.4.6",
     "helmet": "^0.14.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
-    "loopback-datasource-juggler": "^2.39.0",
     "loopback-connector-postgresql": "^2.4.1",
+    "loopback-datasource-juggler": "^2.39.0",
     "main-bower-files": "^2.11.1",
-    "serve-favicon": "^2.0.1"
+    "serve-favicon": "^2.0.1",
+    "webpack": "^1.12.14"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
