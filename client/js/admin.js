@@ -4,7 +4,7 @@ var myApp = angular.module('myApp', ['ng-admin']);
 myApp.config(['NgAdminConfigurationProvider', function(nga) {
   // create an admin application
   var admin = nga.application('YEG Photo Tagger Admin')
-    .baseApiUrl('https://yegtaggerapp.herokuapp.com/api/')
+    .baseApiUrl('/api/')
     .title('YEG Photo Tagger Admin');
 
   var photo = nga.entity('Photos');

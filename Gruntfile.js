@@ -28,23 +28,16 @@ module.exports = function(grunt) {
         }
       }
     },
-    uglify: {
-      bower: {
-        options: {
-          compress: true
-        },
-        files: {
-          'client/vendor/bower.min.js': 'client/vendor/bower.js'
-        }
-      }
+    exec: {
+      webpack: './node_modules/webpack/bin/webpack.js'
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('main-bower-files');
   grunt.loadNpmTasks('grunt-bower-concat');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Default task(s).
-  grunt.registerTask('default', ['bower_concat', 'bower']);
-  grunt.registerTask('uglify', ['uglify']);
+  grunt.registerTask('default', ['bower', 'exec:webpack']);
 };
