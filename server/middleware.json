@@ -49,10 +49,6 @@
     "loopback#urlNotFound": {}
   },
   "final:after": {
-    "loopback#errorHandler": {
-      "params": {
-        "includeStack": false
-      }
+      "loopback#errorHandler": {}
     }
-  }
 }
