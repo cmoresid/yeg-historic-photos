@@ -18,6 +18,14 @@ myApp.config(['NgAdminConfigurationProvider', function(nga) {
       .label('Image Number'),
       nga.field('imageTitle').label('Image Title'),
       nga.field('creationYear').label('Creation Year'),
+    ])
+    .exportFields([
+      nga.field('imageNumber'),
+      nga.field('imagePath'),
+      nga.field('imageTitle'),
+      nga.field('creationYear'),
+      nga.field('location.lat').label('Lat'),
+      nga.field('location.lng').label('Lng')
     ]);
 
   photo.editionView()
