@@ -6,39 +6,50 @@
     "start": "node .",
     "pretest": "jshint .",
     "posttest": "nsp check",
-    "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/grunt-cli/bin/grunt"
+    "postinstall": "./node_modules/jspm/jspm install"
   },
   "dependencies": {
-    "bower": "^1.7.7",
     "compression": "^1.0.3",
     "cors": "^2.5.2",
     "fast-csv": "^1.0.0",
-    "grunt": "0.4.5",
-    "grunt-bower-concat": "^1.0.0",
-    "grunt-bower-task": "^0.4.0",
-    "grunt-cli": "0.1.13",
-    "grunt-exec": "^0.4.6",
     "helmet": "^0.14.0",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-postgresql": "^2.4.1",
     "loopback-datasource-juggler": "^2.39.0",
-    "main-bower-files": "^2.11.1",
-    "serve-favicon": "^2.0.1",
-    "webpack": "^1.12.14"
+    "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-bower-concat": "^1.0.0",
-    "grunt-contrib-uglify": "~0.5.0",
     "jshint": "^2.5.6",
-    "main-bower-files": "^2.11.1",
+    "jspm": "^0.16.30",
     "nsp": "^2.1.0"
   },
   "repository": {
     "type": "",
     "url": ""
   },
-  "description": "yeg_photo_tagger"
+  "description": "yeg_photo_tagger",
+  "jspm": {
+    "directories": {
+      "baseURL": "client"
+    },
+    "dependencies": {
+      "angular": "npm:angular@^1.5.0",
+      "angular-google-maps": "github:angular-ui/angular-google-maps@^2.3.2",
+      "angular-resource": "npm:angular-resource@^1.5.0",
+      "angular-simple-logger": "npm:angular-simple-logger@^0.1.7",
+      "angular-ui-router": "npm:angular-ui-router@^0.2.18",
+      "humane-js": "npm:humane-js@^3.2.2",
+      "jquery": "npm:jquery@^2.2.1",
+      "lodash": "npm:lodash@^4.6.1",
+      "ng-admin": "npm:ng-admin@^0.9.1",
+      "text": "github:systemjs/plugin-text@^0.0.7"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
 }

@@ -16,7 +16,7 @@ body, html {
 }
 
 .angular-google-map {
-    height: 100%;
+    height: 91%;
 }
 
 .form-signin
@@ -93,4 +93,7 @@ body, html {
 {
     display: block;
     margin-top: 10px;
+}
+.hide {
+  display: none;
 }
