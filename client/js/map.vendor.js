@@ -5,3 +5,5 @@ import 'angular-resource';
 import 'angular-simple-logger';
 import 'angular-google-maps';
 import './services/lb.services';
+import 'jquery';
+import 'bootstrap';

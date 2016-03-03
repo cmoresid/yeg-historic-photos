@@ -21,6 +21,7 @@ System.config({
     "angular-ui-router": "npm:angular-ui-router@0.2.18",
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
+    "bootstrap": "github:twbs/bootstrap@3.3.6",
     "core-js": "npm:core-js@1.2.6",
     "humane-js": "npm:humane-js@3.2.2",
     "jquery": "npm:jquery@2.2.1",
@@ -86,6 +87,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:twbs/bootstrap@3.3.6": {
+      "jquery": "github:components/jquery@2.2.1"
     },
     "npm:angular-simple-logger@0.1.7": {
       "angular": "npm:angular@1.5.0",
