@@ -11,6 +11,7 @@
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
+    "jspm": "^0.16.30",
     "fast-csv": "^1.0.0",
     "helmet": "^0.14.0",
     "loopback": "^2.22.0",
@@ -22,7 +23,6 @@
   },
   "devDependencies": {
     "jshint": "^2.5.6",
-    "jspm": "^0.16.30",
     "nsp": "^2.1.0"
   },
   "repository": {
