@@ -1,38 +1,33 @@
-var loginApp = angular.module('loginApp', []);
+class LoginController {
 
-loginApp.factory('notification', function() {
-  var humane = require('humane-js');
-  humane.timeout = 5000;
-  humane.clickToClose = true;
-  return humane;
-});
+  constructor($scope, $window, LoginService) {
+    this.$scope = $scope;
+    this.LoginService = LoginService;
 
-loginApp.controller('loginController', function($scope, $http, $window, notification) {
-  $scope.email = '';
-  $scope.password = '';
+    this.$scope.email = $window.localStorage.getItem('username');
+    this.$scope.password = '';
 
-  function getFormData() {
-    return { "email": $scope.email, "password": $scope.password };
+    this.$scope.parent = this;
+    this.$scope.login = this.login;
+    this.$scope.logout = this.logout;
   }
 
-  $scope.login = function(isValid) {
+  login(isValid) {
     if (!isValid) {
       return false;
     }
 
-    $http.post('/api/Users/login', getFormData())
-      .then(function success(response) {
-        $window.localStorage.setItem('api_token', response.data.id);
-        $window.localStorage.setItem('username', $scope.email);
-        $window.location.href = "./admin.html#/Photos/list";
-      }, function error(response) {
-        if (response.status == 401) {
-          notification.log('Invalid email / password', { addnCls: 'humane-flatty-error' });
-        } else {
-          notification.log('An error has occurred', { addnCls: 'humane-flatty-error' });
-        }
-      });
+    this.parent.LoginService.login(this.email, this.password);
 
     return false;
   }
-});
+
+  logout() {
+    this.parent.LoginService.logout();
+  }
+
+}
+
+LoginController.$inject = ['$scope', '$window', 'LoginService'];
+
+export default LoginController;

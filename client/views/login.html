@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="loginApp">
+<html>
   <head>
     <title>Sign In</title>
     <meta charset="utf-8">
@@ -14,8 +14,13 @@
         window.location.href = "./admin.html#/Photos/list";
       }
     </script>
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../config.js"></script>
+    <script>
+      System.import ('../js/login.bootstrap');
+    </script>
   </head>
-  <body ng-controller="loginController">
+  <body ng-controller="LoginController">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -24,12 +29,12 @@
             <img class="profile-img" src="../img/no_avatar.gif" alt="">
             <form name="loginForm" class="form-signin" ng-submit="login(loginForm.$valid)" novalidate>
               <input id="email" ng-model="email" name="email" type="text" class="form-control" placeholder="Email" required autofocus>
-              <div ng-show="loginForm.$submitted || loginForm.email.$touched">
+              <div class="hide" ng-show="loginForm.$submitted || loginForm.email.$touched">
                 <span ng-show="loginForm.email.$error.required">Please enter your email address.</span>
                 <span ng-show="loginForm.email.$error.email">Please enter a valid email address.</span>
               </div>
               <input id="password" ng-model="password" name="password" type="password" class="form-control" placeholder="Password" required>
-              <div ng-show="loginForm.$submitted || loginForm.password.$touched">
+              <div class="hide" ng-show="loginForm.$submitted || loginForm.password.$touched">
                 <span ng-show="loginForm.password.$error.required">Please enter your password.</span>
               </div>
               <br />
@@ -39,9 +44,5 @@
         </div>
       </div>
     </div>
-
-    <script type="text/javascript" src="../vendor/bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="../js/login_controller.bundle.js"></script>
-
   </body>
 </html>

@@ -11,29 +11,13 @@
         window.location.href = "./login.html";
       }
     </script>
-  </head>
-  <body ng-app="myApp">
-    <div ui-view></div>
-    <script src="../vendor/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
-    <script src="../vendor/bower_components/ng-admin/build/ng-admin.min.js" type="text/javascript"></script>
-    <script src="../js/admin.js" type="text/javascript"></script>
-    <script src="../js/controllers/user.js" type="text/javascript"></script>
-
-    <script type="text/javascript">
-      function logout() {
-        $.ajax({
-            url: '/api/Users/logout?access_token=' +
-              window.localStorage.getItem('api_token'),
-            type: 'POST'
-        }).done(function (data, textStatus) {
-          console.log('textStatus: ', textStatus);
-          window.localStorage.removeItem('api_token');
-          window.localStorage.removeItem('username');
-          window.location.href = "./login.html";
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-          console.log('Error: ', textStatus, errorThrown);
-        });
-      }
+    <script src="../jspm_packages/system.js"></script>
+    <script src="../config.js"></script>
+    <script>
+      System.import ('../js/admin.bootstrap');
     </script>
+  </head>
+  <body>
+    <div ui-view></div>
   </body>
 </html>

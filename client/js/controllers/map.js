@@ -1,8 +1,17 @@
-var yegPhotoApp = angular.module('yegPhotoApp');
+class MapController {
 
-yegPhotoApp.controller('MapController', ['$scope', 'Photo', 'uiGmapGoogleMapApi',
-  function($scope, Photo, GoogleMapApi) {
-    $scope.map = {
+  constructor($scope, Photo, GoogleMapApi) {
+    this.$scope = $scope;
+    this.Photo = Photo;
+    this.GoogleMapApi = GoogleMapApi;
+
+    this.initGoogleMapsOptions();
+    this.initGoogleMapsEvents();
+    this.initGoogleMapsMarkers();
+  }
+
+  initGoogleMapsOptions() {
+    this.$scope.map = {
       center: {
         latitude: 53.542381,
         longitude: -113.498759
@@ -10,19 +19,25 @@ yegPhotoApp.controller('MapController', ['$scope', 'Photo', 'uiGmapGoogleMapApi'
       zoom: 14
     };
 
-    $scope.options = {
+    this.$scope.options = {
       scrollwheel: false
     };
+  }
 
-    $scope.onClick = function(marker, eventName, model) {
+  initGoogleMapsEvents() {
+    this.$scope.onClick = function(marker, eventName, model) {
       model.show = !model.show;
     };
+  }
 
-    GoogleMapApi.then(function(maps) {
-      $scope.googleVersion = maps.version;
+  initGoogleMapsMarkers() {
+    let self = this;
+
+    this.GoogleMapApi.then(function(maps) {
+      self.$scope.googleVersion = maps.version;
       maps.visualRefresh = true;
 
-      $scope.photos = Photo.find({
+      self.$scope.photos = self.Photo.find({
           filter: {
             where: {
               creationYear: {
@@ -33,10 +48,10 @@ yegPhotoApp.controller('MapController', ['$scope', 'Photo', 'uiGmapGoogleMapApi'
         })
         .$promise
         .then(function(photos) {
-          console.log('Photo count: ', photos.length);
-          $scope.photos = photos;
+          self.$scope.photos = photos;
 
           var markers = [];
+
           for (var i = 0; i < photos.length; i++) {
             markers.push({
               id: photos[i].id,
@@ -50,8 +65,13 @@ yegPhotoApp.controller('MapController', ['$scope', 'Photo', 'uiGmapGoogleMapApi'
             });
           }
 
-          $scope.markers = markers;
+          self.$scope.markers = markers;
         });
     });
   }
-]);
+
+}
+
+MapController.$inject = ['$scope', 'Photo', 'uiGmapGoogleMapApi'];
+
+export default MapController;
