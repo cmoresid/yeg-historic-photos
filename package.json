@@ -6,7 +6,7 @@
     "start": "node .",
     "pretest": "jshint .",
     "posttest": "nsp check",
-    "postinstall": "./node_modules/jspm/jspm install"
+    "postinstall": "./node_modules/jspm/jspm.js install"
   },
   "dependencies": {
     "compression": "^1.0.3",
