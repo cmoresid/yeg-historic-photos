@@ -49,13 +49,46 @@ let mainModule = angular.module('myApp', ['ng-admin'])
         .template('<img src="{{ entry.values.imagePath }}" />'),
         nga.field('imageTitle').label('Image Title'),
         nga.field('fondsTitle').label('Fonds Title'),
-        nga.field('creationYear', 'number').label('Creation Year'),
+        nga.field('creationYear', 'number').label('Creation Year')
+        .validation({
+          validator: function(value) {
+            if (value == null || value.length == 0)
+              throw new Error('Please enter the creation year.');
+          }
+        }),
         nga.field('dateOfCreationRaw').label('Date of Creation'),
-        nga.field('description', 'text'),
+        nga.field('description', 'text')
+        .validation({
+          validator: function(value) {
+            if (value == null || value.length == 0)
+              throw new Error('Please enter the description.');
+          }
+        }),
         nga.field('creator'),
         nga.field('subjects'),
         nga.field('names'),
         nga.field('location', 'json')
+        .map(function truncate(value, entry) {
+          if (!value) {
+            return { "lat": 0.0, "lng": 0.0 };
+          }
+          else {
+            return value;
+          }
+        })
+        .validation({
+          validator: function(value) {
+            if (!value)
+              throw new Error('Location is required.')
+            if (value.lat === 0.0 && value.lng === 0.0)
+              throw new Error('Please update the location field with the actual co-ordinates.');
+            if (value.lat === 0.0)
+              throw new Error('Latitude is required.');
+            if (value.lng === 0.0) {
+              throw new Error('Longitude is required.');
+            }
+          }
+        })
       ]);
 
     photo.showView()

@@ -2,12 +2,27 @@ class MapController {
 
   constructor($scope, Photo, GoogleMapApi) {
     this.$scope = $scope;
+    this.$scope.loading = true;
+    this.$scope.markers = []
     this.Photo = Photo;
     this.GoogleMapApi = GoogleMapApi;
 
     this.initGoogleMapsOptions();
     this.initGoogleMapsEvents();
     this.initGoogleMapsMarkers();
+  }
+
+  getPhotos() {
+    return this.Photo.find({
+        filter: {
+          where: {
+            creationYear: {
+              neq: null
+            }
+          }
+        }
+      })
+      .$promise;
   }
 
   initGoogleMapsOptions() {
@@ -33,40 +48,29 @@ class MapController {
   initGoogleMapsMarkers() {
     let self = this;
 
-    this.GoogleMapApi.then(function(maps) {
-      self.$scope.googleVersion = maps.version;
-      maps.visualRefresh = true;
+    self.getPhotos().then(function (photos) {
+      self.GoogleMapApi.then(function (maps) {
+        self.$scope.googleVersion = maps.version;
+        maps.visualRefresh = true;
 
-      self.$scope.photos = self.Photo.find({
-          filter: {
-            where: {
-              creationYear: {
-                neq: null
-              }
-            }
-          }
-        })
-        .$promise
-        .then(function(photos) {
-          self.$scope.photos = photos;
+        var markers = [];
 
-          var markers = [];
+        for (var i = 0; i < photos.length; i++) {
+          markers.push({
+            id: photos[i].id,
+            show: false,
+            imageTitle: photos[i].imageTitle,
+            creationYear: photos[i].creationYear,
+            imagePath: photos[i].imagePath,
+            description: photos[i].description,
+            latitude: photos[i].location.lat,
+            longitude: photos[i].location.lng
+          });
+        }
 
-          for (var i = 0; i < photos.length; i++) {
-            markers.push({
-              id: photos[i].id,
-              show: false,
-              imageTitle: photos[i].imageTitle,
-              creationYear: photos[i].creationYear,
-              imagePath: photos[i].imagePath,
-              description: photos[i].description,
-              latitude: photos[i].location.lat,
-              longitude: photos[i].location.lng
-            });
-          }
-
-          self.$scope.markers = markers;
-        });
+        self.$scope.loading = false;
+        self.$scope.markers = markers;
+      });
     });
   }
 

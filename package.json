@@ -11,14 +11,15 @@
   "dependencies": {
     "compression": "^1.0.3",
     "cors": "^2.5.2",
-    "jspm": "^0.16.30",
     "fast-csv": "^1.0.0",
     "helmet": "^0.14.0",
+    "jspm": "^0.16.30",
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.1.0",
     "loopback-connector-postgresql": "^2.4.1",
     "loopback-datasource-juggler": "^2.39.0",
+    "newrelic": "^1.25.4",
     "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
