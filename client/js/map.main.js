@@ -2,12 +2,12 @@ import './map.vendor';
 
 import MapController from './controllers/map'
 
-let dependencies = ['ui.router', 'lbServices', 'uiGmapgoogle-maps']
+let dependencies = ['ui.router', 'lbServices', 'ui-leaflet']
 
 let mainModule = angular.module('yegPhotoApp', dependencies)
   .controller(MapController.name, MapController)
-  .config(['$stateProvider', '$urlRouterProvider', 'uiGmapGoogleMapApiProvider',
-      function($stateProvider, $urlRouterProvider, uiGmapGoogleMapApiProvider) {
+  .config(['$stateProvider', '$urlRouterProvider',
+      function($stateProvider, $urlRouterProvider) {
         $stateProvider
           .state('map', {
             url: "/map",
@@ -20,11 +20,6 @@ let mainModule = angular.module('yegPhotoApp', dependencies)
           });
 
         $urlRouterProvider.otherwise("/map");
-
-        uiGmapGoogleMapApiProvider.configure({
-          v: '3.23',
-          libraries: 'geometry,visualization'
-        });
       }]);
 
 export default mainModule;
